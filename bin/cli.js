@@ -3,6 +3,7 @@
 import { program } from "commander";
 import chalk from "chalk";
 import modelFunction from "../lib/modelFunction.js";
+import routerFunction from "../lib/routerFunction.js";
 
 const typeOptions = ["model", "route"];
 
@@ -15,6 +16,8 @@ program
   .argument("<name>", "name of file to contain boilerplate code")
   .option("-a, --async", "specify if route handler is async", false)
   .action((type, name, options) => {
+    const isAsync = options.async;
+    console.log(isAsync);
     if (!typeOptions.includes(type)) {
       console.log(chalk.red("type not recognized."));
     }
@@ -22,9 +25,7 @@ program
       modelFunction(name);
     }
     if (type === "route") {
-      console.log(
-        `creating route with name ${name}. isAsync: ${options.async}`
-      );
+      routerFunction(name, isAsync);
     }
   });
 program.parse(process.argv);
