@@ -2,6 +2,7 @@
 
 import { program } from "commander";
 import chalk from "chalk";
+import modelFunction from "../lib/modelFunction.js";
 
 const typeOptions = ["model", "route"];
 
@@ -17,9 +18,8 @@ program
     if (!typeOptions.includes(type)) {
       console.log(chalk.red("type not recognized."));
     }
-
     if (type === "model") {
-      console.log(`creating model with name ${name}`);
+      modelFunction(name);
     }
     if (type === "route") {
       console.log(
