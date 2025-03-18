@@ -1,5 +1,5 @@
 {
-  "name": "express-mongoose-boilerplate-generator-package",
+  "name": "@yoirchalk/express-mongoose-cli-tool",
   "version": "1.0.0",
   "description": "",
   "type": "module",
