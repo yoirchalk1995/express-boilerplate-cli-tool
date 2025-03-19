@@ -8,7 +8,7 @@ import routerFunction from "../lib/routerFunction.js";
 const typeOptions = ["model", "route"];
 
 program
-  .version("1.0.0")
+  .version("0.1.0")
   .description(
     "create file containing boilerplate code for an express route or mongoose model"
   )
