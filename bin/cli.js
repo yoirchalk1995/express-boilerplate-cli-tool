@@ -5,7 +5,7 @@ import chalk from "chalk";
 import modelFunction from "../lib/modelFunction.js";
 import routerFunction from "../lib/routerFunction.js";
 
-const typeOptions = ["model", "route"];
+const typeOptions = ["model", "route", "both"];
 
 program
   .version("0.1.0")
@@ -25,6 +25,10 @@ program
     }
     if (type === "route") {
       routerFunction(name, isAsync);
+    }
+    if (type === "both") {
+      routerFunction(name, isAsync);
+      modelFunction(name);
     }
   });
 program.parse(process.argv);
