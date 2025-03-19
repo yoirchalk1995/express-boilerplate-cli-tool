@@ -8,9 +8,9 @@ import routerFunction from "../lib/routerFunction.js";
 const typeOptions = ["model", "route", "both"];
 
 program
-  .version("0.1.0")
+  .version("0.1.0-beta.1")
   .description(
-    "create file containing boilerplate code for an express route or mongoose model"
+    "create file containing boilerplate code for an express route and or or mongoose model"
   )
   .argument("<type>", `type of file to create; ${typeOptions}`)
   .argument("<name>", "name of file to contain boilerplate code")
