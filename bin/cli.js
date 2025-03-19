@@ -17,7 +17,6 @@ program
   .option("-a, --async", "specify if route handler is async", false)
   .action((type, name, options) => {
     const isAsync = options.async;
-    console.log(isAsync);
     if (!typeOptions.includes(type)) {
       console.log(chalk.red("type not recognized."));
     }
