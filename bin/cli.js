@@ -18,7 +18,21 @@ program
     "Name of file to contain boilerplate code. Required unless -c flag is passed"
   )
   .option("-a, --async", "specify if route handler is async", false)
-  .option("-c, --custom [file]", "specify file to act as custom template for ")
+  .option("-c, --custom [file]", "specify file to act as custom template for ");
+program
+  .configureHelp({
+    optionTerm: (option) => {
+      const flagStr = String(option.flags);
+      if (flagStr.includes("-c")) {
+        return flagStr.replace(/\[([^\]]+)\]/, "<$1>");
+      }
+      return flagStr;
+    },
+    argumentTerm: (arg) => {
+      return `<${arg.name()}>`;
+    },
+  })
+  .usage("<type>, <name>")
   .action((type, name, options) => {
     const { async: isAsync, custom } = options;
     if (custom) {
