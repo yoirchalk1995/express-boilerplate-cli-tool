@@ -13,10 +13,19 @@ program
     "create file containing boilerplate code for an express route and or or mongoose model"
   )
   .argument("<type>", `type of file to create; ${typeOptions}`)
-  .argument("<name>", "name of file to contain boilerplate code")
+  .argument(
+    "[name]",
+    "Name of file to contain boilerplate code. Required unless-c flag is passed"
+  )
   .option("-a, --async", "specify if route handler is async", false)
+  .option("-c, --custom <file>", "specify file to act as custom template for ")
   .action((type, name, options) => {
-    const isAsync = options.async;
+    const { async: isAsync, custom } = options;
+    if (custom) {
+      console.log(custom);
+      return;
+    }
+
     if (!typeOptions.includes(type)) {
       console.log(chalk.red("type not recognized."));
     }
