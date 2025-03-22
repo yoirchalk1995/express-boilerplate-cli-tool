@@ -108,6 +108,7 @@ app.get('/${pluralName}', (req, res) => {
 ```
 
 make sure to include necessary import statements. Constant **must** end with semicolon ;
+
 **must** use **let** keyword
 
 ## Contribution and Feedback
