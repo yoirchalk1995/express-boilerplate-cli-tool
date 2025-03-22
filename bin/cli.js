@@ -3,7 +3,7 @@
 import { program } from "commander";
 import chalk from "chalk";
 import modelFunction from "../lib/modelFunction.js";
-import routerFunction from "../lib/routerFunction.js";
+import routerFunction from "../lib/routeFunction.js";
 import customFunction from "../lib/customBoilerplateFunction.js";
 
 const typeOptions = ["model", "route", "both"];

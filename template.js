@@ -1,4 +1,4 @@
 const template = `
-sss
-aaa
-aaa`;
+smob
+bob
+bob`;
