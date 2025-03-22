@@ -9,7 +9,7 @@ import customFunction from "../lib/customBoilerplateFunction.js";
 const typeOptions = ["model", "route", "both"];
 
 program
-  .version("0.1.0-beta.1")
+  .version("1.2.0")
   .description(
     "create file containing boilerplate code for an express route and or or mongoose model"
   )
