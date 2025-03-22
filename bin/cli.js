@@ -3,7 +3,8 @@
 import { program } from "commander";
 import chalk from "chalk";
 import modelFunction from "../lib/modelFunction.js";
-import routerFunction from "../lib/routerFunction.js";
+import routerFunction from "../lib/routeFunction.js";
+import customFunction from "../lib/customBoilerplateFunction.js";
 
 const typeOptions = ["model", "route", "both"];
 
@@ -41,10 +42,13 @@ program
         process.exit();
       }
       if (custom === true) {
-        console.log(chalk.red("custom boilerplate code file not provided."));
+        console.log(
+          chalk.red("custom boilerplate template file not provided.")
+        );
         process.exit();
       }
-      customBoileplate(custom);
+      customFunction(type, custom);
+      process.exit();
     }
     if (!typeOptions.includes(type)) {
       console.log(chalk.red(`<type> must be one of [${typeOptions}]`));
@@ -64,7 +68,3 @@ program
     }
   });
 program.parse(process.argv);
-
-function customBoileplate(type) {
-  console.log(type);
-}
