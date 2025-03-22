@@ -1,4 +1,4 @@
-const template = `
+let template = `
 smob
 bob
 bob`;
