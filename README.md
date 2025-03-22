@@ -88,7 +88,7 @@ generate_pb route -c template.js
 
 and an example of template.js content:
 ```js
-const template = `
+let template = `
 const express = require('express')
 const mysql = require('mysql2')
 
@@ -108,6 +108,7 @@ app.get('/${pluralName}', (req, res) => {
 ```
 
 make sure to include necessary import statements. Constant **must** end with semicolon ;
+**must** use **let** keyword
 
 ## Contribution and Feedback
 
