@@ -19,5 +19,8 @@
   },
   "bin": {
     "generate_bp": "./bin/cli.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.1"
   }
 }
