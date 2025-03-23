@@ -10,6 +10,8 @@ A CLI tool to generate boilerplate code for express routers and mongoose models 
   - [Setting custom boilerplate template](#setting-file-as-boilerplate-template)
 - [Contributing and feedback](#contribution-and-feedback)
 
+Not sure why links aren't working on npmjs.com. They work in GitHub
+
 
 ## Features
 - Automatically generates **Mongoose models** with **Joi validation**.
@@ -17,8 +19,16 @@ A CLI tool to generate boilerplate code for express routers and mongoose models 
 - Handles both **singular** and **plural** forms.
 - Places generated files in appropriate **models** and **routes** directories.
 - Creates **models** or **routes** folders in the root directory if they do not exist.
-- **New features in 1.1.0!**
+- **New features in 1.1.0**
   - Ability to set file as template for boilerplate using -c flag
+- **Next update**
+  - `-r` tag to restore default boilerplate template
+- **Future updates**
+  - More comprehensive native support for different express stacks
+    - mySQL
+    - postgreSQL
+  - Database initialization boilerplate code
+  - Ability to set stack flag once and generate boileplate based on chosen stack every time without needing to pass flag. 
 
 ## Installation
 Run the following command to install as a dev dependency:
@@ -107,9 +117,11 @@ app.get('/${pluralName}', (req, res) => {
 `
 ```
 
-make sure to include necessary import statements. Constant **must** end with semicolon ;
+Make sure to include necessary import statements. 
 
-**must** use **let** keyword
+Constant **must** end with semicolon ;
+
+**Must** use **let** keyword and not const
 
 ## Contribution and Feedback
 
