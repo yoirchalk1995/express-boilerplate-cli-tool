@@ -4,7 +4,7 @@ import { program } from "commander";
 import chalk from "chalk";
 import modelFunction from "../lib/modelFunction.js";
 import routerFunction from "../lib/routeFunction.js";
-import {customFunction} from "../lib/customBoilerplate.js";
+import { customFunction } from "../lib/customBoilerplate.js";
 import { revertTemplate } from "../lib/customBoilerplate.js";
 
 const typeOptions = ["model", "route", "both"];
@@ -21,7 +21,7 @@ program
   )
   .option("-a, --async", "specify if route handler is async", false)
   .option("-c, --custom [file]", "specify file to act as custom template for ")
-  .option("-r, --revert", "revert to default boilerplate template")
+  .option("-r, --revert", "revert to default boilerplate template");
 program
   .configureHelp({
     optionTerm: (option) => {
@@ -37,10 +37,7 @@ program
   })
   .usage("<type>, <name>")
   .action((type, name, options) => {
-    const { async: isAsync, custom, revert } = options;
-    if(revert){
-      
-    }
+    const { async: isAsync, custom } = options;
     if (custom) {
       if (name) {
         console.log(chalk.red("name is not compatible with --custom flag"));
